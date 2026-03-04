@@ -6,30 +6,30 @@ const Achievements = () => {
   const achievements = [
     {
       icon: <Award className="h-8 w-8" />,
-      title: 'Large Scale Platform Leadership',
-      description: 'Led QA initiatives for large-scale mobile gaming platforms serving millions of users, ensuring quality and reliability in high-stakes environments.',
+      title: 'Quality Engineering Leadership',
+      description: 'Led QA initiatives for large-scale mobile applications in the real money gaming industry, ensuring high reliability, performance, and security for platforms serving millions of users in high-traffic environments.',
       metric: '14+ Years',
       color: 'blue'
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
       title: 'Release Cycle Optimization',
-      description: 'Improved release cycle efficiency by implementing automated testing frameworks and CI/CD integration, reducing testing time by 60%.',
-      metric: '60% Faster',
+      description: 'Accelerated release cycles by implementing automation frameworks and CI/CD-integrated testing pipelines, significantly reducing regression testing time and enabling faster, more confident deployments.',
+      metric: 'Faster Releases',
       color: 'green'
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: 'Team Development & Mentorship',
-      description: 'Mentored and developed multiple QA leads and engineers, building high-performing teams with strong testing culture and best practices.',
+      description: 'Mentored and guided QA leads and engineers, establishing strong testing practices, automation culture, and scalable QA processes across teams.',
       metric: '20+ Engineers',
       color: 'purple'
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: 'Innovative Testing Solutions',
-      description: 'Created innovative testing strategies and internal tools for test case impact analysis, automation frameworks, and quality metrics dashboards.',
-      metric: 'Multiple Tools',
+      title: 'Testing Tools & Quality Insights',
+      description: 'Designed internal QA solutions including test impact analysis tools, automation frameworks, and testing dashboards that improved testing visibility and enabled more efficient quality decision-making.',
+      metric: 'Internal QA Innovations',
       color: 'orange'
     }
   ];
@@ -53,7 +53,7 @@ const Achievements = () => {
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Delivering measurable impact through quality engineering excellence
+            Delivering measurable impact through quality engineering leadership, automation strategy, and scalable testing practices
           </p>
         </div>
 

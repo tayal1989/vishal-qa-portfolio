@@ -8,31 +8,31 @@ const Projects = () => {
   const projects = [
     {
       title: 'Mobile Automation Framework',
-      description: 'Built a comprehensive mobile automation framework using Appium and Java for testing iOS and Android applications. Integrated with CI/CD pipelines for continuous testing.',
+      description: 'Designed and implemented a scalable mobile automation framework using Appium and Java for testing Android and iOS applications. The framework supports parallel execution and CI/CD integration for faster feedback cycles.',
       icon: <Smartphone className="h-6 w-6" />,
-      tags: ['Appium', 'Java', 'TestNG', 'Jenkins', 'Mobile'],
-      impact: 'Reduced mobile testing time by 70%'
+      tags: ['Appium', 'Java', 'TestNG', 'Jenkins', 'Android', 'iOS'],
+      impact: 'Reduced manual regression testing effort and significantly improved release confidence'
     },
     {
       title: 'QA Process Optimization',
-      description: 'Designed and implemented streamlined QA processes including test planning, execution strategies, and quality gates that improved overall team efficiency.',
+      description: 'Defined and implemented structured QA processes, including improved test planning, automation strategy, release validation, and quality gates across the development lifecycle.',
       icon: <Cog className="h-6 w-6" />,
-      tags: ['Process', 'Agile', 'Quality Gates', 'Best Practices'],
-      impact: 'Improved team productivity by 40%'
-    },
-    {
-      title: 'Test Case Impact Analysis Tool',
-      description: 'Developed an internal tool for analyzing test case coverage and impact, helping teams prioritize testing efforts and identify gaps in test coverage.',
-      icon: <BarChart3 className="h-6 w-6" />,
-      tags: ['Python', 'Analytics', 'Coverage', 'Metrics'],
-      impact: 'Enhanced test coverage visibility by 100%'
+      tags: ['Agile', 'QA Strategy', 'Quality Gates', 'Test Planning'],
+      impact: 'Improved testing efficiency and strengthened collaboration between QA, development, and product teams'
     },
     {
       title: 'CI/CD Testing Integration',
-      description: 'Integrated automated testing suites into CI/CD pipelines using Jenkins, enabling continuous testing and faster feedback loops for development teams.',
+      description: 'Integrated automated test suites into CI/CD pipelines using Jenkins, enabling continuous testing and faster feedback for engineering teams.',
       icon: <GitMerge className="h-6 w-6" />,
       tags: ['Jenkins', 'CI/CD', 'Automation', 'DevOps'],
-      impact: 'Achieved 95% automation coverage'
+      impact: 'Enabled faster build validation and improved confidence in production releases'
+    },
+    {
+      title: 'AI-Assisted Testing Exploration',
+      description: 'Exploring modern AI-driven testing approaches, including evaluation of RAG-based applications and agentic AI systems for quality validation and testing strategies.',
+      icon: <BarChart3 className="h-6 w-6" />,
+      tags: ['AI Testing', 'RAG Evaluation', 'LLM Quality Testing', 'Intelligent Test Design'],
+      impact: 'Researching new approaches to improve test case generation, defect detection, and intelligent automation'
     }
   ];
 
@@ -45,7 +45,7 @@ const Projects = () => {
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Transforming quality engineering through innovation and automation
+            Transforming quality engineering through automation, tooling, and process innovation
           </p>
         </div>
 

@@ -16,22 +16,28 @@ const About = () => {
           <div className="space-y-6">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               With over <span className="font-semibold text-blue-600 dark:text-blue-400">14 years of experience</span> in
-              software quality assurance, I've built and led high-performing QA teams that deliver
-              exceptional results in fast-paced environments.
+              Software Quality Engineering, I specialize in designing scalable testing strategies and leading
+              high-performing QA teams that deliver reliable, high-quality software in fast-paced environments.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              My expertise spans across <span className="font-semibold">mobile testing</span>, <span className="font-semibold">test automation strategy</span>,
-              and <span className="font-semibold">CI/CD integration</span>. I specialize in building robust automation
-              frameworks and internal testing tools that dramatically improve testing efficiency.
+              My expertise spans across <span className="font-semibold">Web, Mobile, Backend, and API testing</span>, with
+              a strong focus on automation framework design, CI/CD integration, and intelligent testing strategies.
+              I have built robust automation solutions using <span className="font-semibold">Selenium, Appium, Playwright</span>,
+              and modern testing frameworks to accelerate release cycles while maintaining strong quality standards.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Having worked extensively in the <span className="font-semibold">real money gaming</span> industry,
-              I understand the critical importance of quality, security, and compliance in
-              high-stakes applications.
+              I have extensive experience working on large-scale mobile applications in the <span className="font-semibold">real money gaming</span> industry,
+              where reliability, performance, and security are critical. My work has helped teams improve testing coverage,
+              reduce production issues, and enable faster and more confident releases.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I'm passionate about mentoring QA professionals, establishing best practices,
-              and driving quality culture across engineering organizations.
+              I am also actively exploring <span className="font-semibold">AI-driven testing</span> approaches, including
+              evaluating RAG-based applications and agentic AI frameworks, and leveraging AI to improve test design,
+              automation efficiency, and software quality insights.
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              Beyond execution, I'm passionate about mentoring QA professionals, building internal testing tools,
+              and establishing strong quality engineering practices across organizations.
             </p>
           </div>
 
@@ -44,15 +50,23 @@ const About = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
-                    <span className="text-slate-700 dark:text-slate-300">QA Team Leadership & Mentorship</span>
+                    <span className="text-slate-700 dark:text-slate-300">QA Leadership & Team Mentorship</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
-                    <span className="text-slate-700 dark:text-slate-300">Test Automation Strategy & Implementation</span>
+                    <span className="text-slate-700 dark:text-slate-300">Quality Engineering Strategy</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
-                    <span className="text-slate-700 dark:text-slate-300">Mobile Testing (iOS & Android)</span>
+                    <span className="text-slate-700 dark:text-slate-300">Web, Mobile & Backend Testing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">API Testing & Automation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">Automation Framework Architecture</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
@@ -60,11 +74,27 @@ const About = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
-                    <span className="text-slate-700 dark:text-slate-300">Internal Testing Tools Development</span>
+                    <span className="text-slate-700 dark:text-slate-300">Mobile Application Testing (Android & iOS)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
-                    <span className="text-slate-700 dark:text-slate-300">Real Money Gaming Products</span>
+                    <span className="text-slate-700 dark:text-slate-300">Performance & Reliability Testing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">Internal QA Tools Development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">AI-Assisted Testing & Intelligent Test Design</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">Testing RAG-Based Systems & AI Applications</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">▹</span>
+                    <span className="text-slate-700 dark:text-slate-300">Real Money Gaming Platform Testing</span>
                   </li>
                 </ul>
               </div>

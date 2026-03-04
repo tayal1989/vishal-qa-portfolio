@@ -15,99 +15,51 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Testing Expertise',
-      icon: <CheckCircle className="h-6 w-6" />,
-      skills: [
-        'Functional Testing',
-        'Regression Testing',
-        'Exploratory Testing',
-        'Test Strategy',
-        'Test Planning',
-        'Test Case Design'
-      ]
-    },
-    {
-      title: 'Automation',
+      title: 'Programming Languages',
       icon: <Code className="h-6 w-6" />,
       skills: [
-        'Selenium',
-        'Appium',
-        'Playwright',
-        'TestNG',
         'Java',
         'Python'
       ]
     },
     {
-      title: 'Mobile Testing',
-      icon: <Smartphone className="h-6 w-6" />,
+      title: 'Automation Frameworks',
+      icon: <Zap className="h-6 w-6" />,
       skills: [
-        'iOS Testing',
-        'Android Testing',
+        'Selenium',
+        'Playwright',
+        'Appium',
+        'Robot Framework',
+        'TestNG'
+      ]
+    },
+    {
+      title: 'Testing Types',
+      icon: <CheckCircle className="h-6 w-6" />,
+      skills: [
+        'Web Automation',
         'Mobile Automation',
-        'Device Farm',
-        'App Performance',
-        'Platform Compatibility'
+        'API Automation',
+        'Backend Testing'
       ]
     },
     {
-      title: 'CI/CD & DevOps',
-      icon: <GitBranch className="h-6 w-6" />,
-      skills: [
-        'Jenkins',
-        'Git',
-        'Docker',
-        'AWS',
-        'Continuous Testing',
-        'Pipeline Integration'
-      ]
-    },
-    {
-      title: 'Tools & Technologies',
+      title: 'Tools & Platforms',
       icon: <Settings className="h-6 w-6" />,
       skills: [
         'Jira',
-        'TestRail',
-        'Postman',
-        'Charles Proxy',
-        'Sauce Labs',
-        'BrowserStack'
+        'Git',
+        'Jenkins',
+        'AWS'
       ]
     },
     {
-      title: 'Performance Testing',
-      icon: <Zap className="h-6 w-6" />,
+      title: 'AI & Modern Testing',
+      icon: <Smartphone className="h-6 w-6" />,
       skills: [
-        'JMeter',
-        'Load Testing',
-        'Stress Testing',
-        'Performance Monitoring',
-        'API Testing',
-        'Benchmark Analysis'
-      ]
-    },
-    {
-      title: 'Database & Backend',
-      icon: <Database className="h-6 w-6" />,
-      skills: [
-        'SQL',
-        'MongoDB',
-        'API Testing',
-        'REST APIs',
-        'GraphQL',
-        'Database Validation'
-      ]
-    },
-    {
-      title: 'QA Leadership',
-      icon: <Users className="h-6 w-6" />,
-      skills: [
-        'Team Management',
-        'Mentorship',
-        'Process Improvement',
-        'Quality Strategy',
-        'Stakeholder Management',
-        'Agile/Scrum'
+        'AI-Assisted Test Design',
+        'RAG Application Testing',
+        'Agentic AI Framework Evaluation'
       ]
     }
   ];
@@ -122,7 +74,7 @@ const Skills = () => {
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <Card
               key={index}

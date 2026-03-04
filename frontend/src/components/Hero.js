@@ -22,11 +22,11 @@ const Hero = () => {
               Vishal Agarwal
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-blue-600 dark:text-blue-400">
-              Technical QA Manager | Software Testing Leader | Automation Strategist
+              Technical QA Manager | Quality Engineering Leader | Automation & Testing Strategist
             </h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-              Helping teams ship high quality products faster through automation,
-              intelligent testing, and QA leadership.
+              Helping teams ship reliable software faster through intelligent testing,
+              scalable automation frameworks, and strong QA leadership.
             </p>
           </div>
 
