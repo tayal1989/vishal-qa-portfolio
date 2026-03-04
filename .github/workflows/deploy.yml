@@ -21,14 +21,19 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Remove private package from package.json
+      - name: Prepare package.json for CI
         run: |
           node -e "
             const fs = require('fs');
             const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            // Remove private/problematic packages for CI
             delete pkg.devDependencies['@emergentbase/visual-edits'];
+            // Remove packageManager to allow npm to run
             delete pkg.packageManager;
+            // Override build script to use react-scripts directly
+            pkg.scripts.build = 'react-scripts build';
             fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+            console.log('package.json updated for CI');
           "
         working-directory: frontend
 
@@ -36,20 +41,20 @@ jobs:
         run: npm install --legacy-peer-deps
         working-directory: frontend
 
-      - name: Verify craco installed
-        run: |
-          echo "Node version: $(node --version)"
-          echo "NPM version: $(npm --version)"
-          ls node_modules/.bin/craco || echo "craco NOT found!"
-          ls node_modules/@craco/craco/package.json || echo "@craco/craco NOT found!"
-        working-directory: frontend
-
       - name: Build
-        run: npx craco build 2>&1
+        run: npm run build
         working-directory: frontend
         env:
           CI: false
           GENERATE_SOURCEMAP: false
+
+      - name: Debug on failure
+        if: failure()
+        run: |
+          echo "Build failed. Checking for errors..."
+          cat /home/runner/work/vishal-qa-portfolio/vishal-qa-portfolio/frontend/npm-debug.log 2>/dev/null || true
+          ls frontend/build 2>/dev/null || echo "No build directory"
+        working-directory: .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
