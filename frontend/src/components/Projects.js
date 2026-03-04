@@ -89,18 +89,6 @@ const Projects = () => {
             </Card>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-slate-300 dark:border-slate-700"
-            onClick={() => window.open('https://github.com/tayal1989', '_blank')}
-          >
-            View More on GitHub
-            <ExternalLink className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
       </div>
     </section>
   );

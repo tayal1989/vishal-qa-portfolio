@@ -1,46 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Button } from './ui/button';
-import { ExternalLink, Clock } from 'lucide-react';
+import { Badge } from './ui/badge';
+import { ExternalLink, Clock, BookOpen } from 'lucide-react';
 
 const Articles = () => {
-  const [articles, setArticles] = useState([
+  const articles = [
     {
-      title: 'Building Effective Mobile Automation Frameworks',
-      description: 'A comprehensive guide to creating scalable and maintainable mobile automation frameworks using Appium and best practices.',
-      date: '2024',
-      readTime: '8 min read',
-      tags: ['Automation', 'Mobile Testing', 'Appium']
+      title: 'How to Answer a Test Case Writing Interview Question — A Structured Approach That Impresses',
+      description: 'A comprehensive guide showing a structured approach to answer test case writing questions in interviews, demonstrating clear testing thinking process.',
+      category: 'Testing Strategy | QA Leadership',
+      tags: ['Testing Strategy', 'Interview Preparation', 'QA Leadership'],
+      url: 'https://medium.com/@tayal1989/how-to-answer-a-test-case-writing-interview-question-a-structured-approach-that-impresses-59efb60e60b1',
+      icon: <BookOpen className="h-6 w-6" />
     },
     {
-      title: 'QA Leadership: Building High-Performing Testing Teams',
-      description: 'Insights on mentoring QA engineers, establishing quality culture, and driving continuous improvement in testing organizations.',
-      date: '2024',
-      readTime: '6 min read',
-      tags: ['Leadership', 'Team Management', 'Culture']
+      title: 'Top Selenium Exceptions You Must Know in 2025',
+      description: 'Practical debugging knowledge covering the most common Selenium exceptions with real-world debugging tips and solutions.',
+      category: 'Automation | Debugging',
+      tags: ['Selenium', 'Automation', 'Debugging', 'Java'],
+      url: 'https://medium.com/@tayal1989/top-selenium-exceptions-you-must-know-in-2025-with-real-world-debugging-tips-c76a442d9d0d',
+      icon: <BookOpen className="h-6 w-6" />
     },
     {
-      title: 'CI/CD Integration for Quality Engineers',
-      description: 'How to effectively integrate automated testing into CI/CD pipelines for faster feedback and continuous quality assurance.',
-      date: '2023',
-      readTime: '10 min read',
-      tags: ['CI/CD', 'DevOps', 'Automation']
+      title: 'TestNG Priority: The Interview Question That Tricks Even Experienced Testers',
+      description: 'Deep dive into TestNG priority mechanisms that often confuse testers, showing advanced automation framework knowledge.',
+      category: 'Automation Frameworks',
+      tags: ['TestNG', 'Automation', 'Java', 'Interview Preparation'],
+      url: 'https://medium.com/@tayal1989/testng-priority-the-interview-question-that-tricks-even-experienced-testers-c4ea4aa4f2d3',
+      icon: <BookOpen className="h-6 w-6" />
     },
     {
-      title: 'Test Strategy for Real Money Gaming Applications',
-      description: 'Special considerations and approaches for testing high-stakes gaming applications with focus on security and compliance.',
-      date: '2023',
-      readTime: '7 min read',
-      tags: ['Gaming', 'Security', 'Test Strategy']
+      title: 'Releasing at the Speed of Thought: Inside Zupee\'s App Release Engine',
+      description: 'Engineering leadership article showcasing real-world impact on release engineering, CI/CD optimization, and quality engineering at scale.',
+      category: 'Engineering Culture | Release Strategy',
+      tags: ['Engineering Leadership', 'CI/CD', 'Release Management', 'DevOps'],
+      url: 'https://tech.zupee.com/releasing-at-the-speed-of-thought-inside-zupees-app-release-engine-f100de7b4833',
+      icon: <BookOpen className="h-6 w-6" />
     }
-  ]);
+  ];
 
   return (
     <section id="articles" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Articles & Thought Leadership
+            Featured Articles
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
@@ -52,19 +57,22 @@ const Articles = () => {
           {articles.map((article, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/50 hover:border-blue-400 dark:hover:border-blue-600"
+              className="group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/50 hover:border-blue-400 dark:hover:border-blue-600 cursor-pointer"
+              onClick={() => window.open(article.url, '_blank')}
             >
               <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    {article.date}
-                  </span>
-                  <div className="flex items-center text-sm text-slate-500 dark:text-slate-400">
-                    <Clock className="h-4 w-4 mr-1" />
-                    {article.readTime}
+                <div className="flex items-start justify-between mb-3">
+                  <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    {article.icon}
                   </div>
+                  <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                 </div>
-                <CardTitle className="text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <div className="mb-2">
+                  <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                    {article.category}
+                  </span>
+                </div>
+                <CardTitle className="text-xl text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">
                   {article.title}
                 </CardTitle>
                 <CardDescription className="text-slate-600 dark:text-slate-400 mt-2">
@@ -72,14 +80,15 @@ const Articles = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {article.tags.map((tag, tagIndex) => (
-                    <span
+                    <Badge
                       key={tagIndex}
-                      className="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                      variant="secondary"
+                      className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
                       {tag}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -93,7 +102,7 @@ const Articles = () => {
             className="bg-blue-600 hover:bg-blue-700 text-white"
             onClick={() => window.open('https://medium.com/@tayal1989', '_blank')}
           >
-            Read All Articles on Medium
+            View All Articles
             <ExternalLink className="ml-2 h-5 w-5" />
           </Button>
         </div>
