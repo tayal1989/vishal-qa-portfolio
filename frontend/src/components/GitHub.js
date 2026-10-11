@@ -74,14 +74,14 @@ const GitHub = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {repositories.map((repo, index) => (
             <Card
               key={index}
-              className="bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 cursor-pointer flex flex-col justify-between group"
+              className="bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 cursor-pointer flex flex-col justify-between h-full group"
               onClick={() => window.open(repo.url, '_blank')}
             >
-              <CardHeader className="space-y-3 pb-3">
+              <CardHeader className="space-y-3 pb-3 flex-1 flex flex-col">
                 <div className="flex items-start justify-between">
                   <div className="p-2.5 rounded-xl bg-slate-800 border border-slate-700/80 group-hover:scale-105 transition-transform">
                     {repo.icon}
@@ -91,17 +91,17 @@ const GitHub = () => {
                 <CardTitle className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
                   {repo.name}
                 </CardTitle>
-                <CardDescription className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                <CardDescription className="text-slate-300 text-xs sm:text-sm leading-relaxed flex-1">
                   {repo.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 pt-0">
+              <CardContent className="space-y-3 pt-0 mt-auto">
                 <div className="flex items-center space-x-3 text-xs pt-2 border-t border-slate-800">
                   <span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${getLanguageColor(repo.language)}`}>
                     {repo.language}
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 min-h-[38px] items-center">
                   {repo.topics.map((topic, topicIndex) => (
                     <span
                       key={topicIndex}

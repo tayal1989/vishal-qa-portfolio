@@ -26,6 +26,26 @@ const ToolsAndFrameworks = () => {
 
   const tools = [
     {
+      id: 'mobikwik-mobile',
+      name: 'MobiKwik Client Automation',
+      company: 'One MobiKwik Systems',
+      category: 'mobile',
+      categoryLabel: 'Mobile Framework',
+      tagline: '95%+ Mobile Client Automation (Android & iOS)',
+      description:
+        'Architected and scaled client automation infrastructure for Android and iOS apps using Appium, Java, and TestNG. Own and maintain the full Jenkins CI/CD pipeline end-to-end powering automated regressions and pull-request build gates.',
+      icon: <Smartphone className="h-6 w-6 text-cyan-400" />,
+      color: 'from-cyan-500/20 to-blue-500/20 border-cyan-500/30',
+      badgeColor: 'bg-cyan-950/70 text-cyan-300 border-cyan-700/60',
+      tech: ['Appium', 'Java', 'TestNG', 'Jenkins CI/CD', 'Maven', 'Android & iOS'],
+      highlights: [
+        '95%+ frontend client test automation coverage achieved and maintained',
+        'Parallel cross-device execution integrated into Jenkins CI/CD pipelines',
+        'End-to-end pipeline ownership from code commit to test report delivery'
+      ],
+      impact: 'Achieved 95%+ client test automation coverage with full CI/CD pipeline reliability.'
+    },
+    {
       id: 'optics',
       name: 'Optics',
       company: 'One MobiKwik Systems',
@@ -33,7 +53,7 @@ const ToolsAndFrameworks = () => {
       categoryLabel: 'Visual AI Automation',
       tagline: 'End-to-End AI-Assisted Visual Regression Suite',
       description:
-        'Engineered an enterprise visual automation framework utilizing Java, AI-assisted scripting, and image comparison diff engines. Accurately detects pixel-level UI regressions, banner clipping, and layout deformities across diverse Android & iOS screen resolutions that functional suites miss.',
+        'Engineered an enterprise visual automation framework utilizing Java, AI-assisted scripting, and image comparison diff engines. Accurately detects pixel-level UI regressions, banner clipping, and layout deformities across diverse screen resolutions that functional suites miss.',
       icon: <Eye className="h-6 w-6 text-cyan-400" />,
       color: 'from-cyan-500/20 to-blue-500/20 border-cyan-500/30',
       badgeColor: 'bg-cyan-950/70 text-cyan-300 border-cyan-700/60',
@@ -44,6 +64,26 @@ const ToolsAndFrameworks = () => {
         'Directly integrated into CI/CD build gates to block visually broken builds'
       ],
       impact: 'Prevented critical UI regressions on high-traffic fintech transaction screens.'
+    },
+    {
+      id: 'agentic-mcp',
+      name: 'Agentic Testing & MCP',
+      company: 'MobiKwik & R&D',
+      category: 'ai-agentic',
+      categoryLabel: 'Agentic AI Systems',
+      tagline: 'Autonomous AI Test Pipelines with Claude & Cursor IDE',
+      description:
+        'Architecting next-generation agentic testing workflows using Claude AI Agents and Model Context Protocol (MCP) in Cursor IDE. Analyzes codebase changes, autonomously authors test cases, updates regression matrices, and self-heals broken locators.',
+      icon: <Bot className="h-6 w-6 text-blue-400" />,
+      color: 'from-blue-500/20 to-indigo-500/20 border-blue-500/30',
+      badgeColor: 'bg-blue-950/70 text-blue-300 border-blue-700/60',
+      tech: ['Model Context Protocol (MCP)', 'Cursor IDE', 'Claude AI Agents', 'Appium MCP', 'Self-Healing Tests'],
+      highlights: [
+        'Autonomous test generation triggered by code commits and feature PRs',
+        'MCP tool integration connecting AI agents directly to Appium and local simulators',
+        'Substantially cuts down continuous regression maintenance overhead'
+      ],
+      impact: 'Pioneering AI-first quality transformation; reduces manual test scripting hours by 60%+.'
     },
     {
       id: 'pulse',
@@ -126,46 +166,6 @@ const ToolsAndFrameworks = () => {
       impact: 'Empowered product managers with quantifiable friction metrics to refine user journeys.'
     },
     {
-      id: 'agentic-mcp',
-      name: 'Agentic Testing & MCP',
-      company: 'MobiKwik & R&D',
-      category: 'ai-agentic',
-      categoryLabel: 'Agentic AI Systems',
-      tagline: 'Autonomous AI Test Pipelines with Claude & Cursor IDE',
-      description:
-        'Architecting next-generation agentic testing workflows using Claude AI Agents and Model Context Protocol (MCP) in Cursor IDE. The system analyzes codebase changes, autonomously authors test cases, updates regression matrices, and self-heals broken locators.',
-      icon: <Bot className="h-6 w-6 text-blue-400" />,
-      color: 'from-blue-500/20 to-indigo-500/20 border-blue-500/30',
-      badgeColor: 'bg-blue-950/70 text-blue-300 border-blue-700/60',
-      tech: ['Model Context Protocol (MCP)', 'Cursor IDE', 'Claude AI Agents', 'Appium MCP', 'Self-Healing Test Logic'],
-      highlights: [
-        'Autonomous test generation triggered by code commits and feature PRs',
-        'MCP tool integration connecting AI agents directly to Appium and local simulators',
-        'Substantially cuts down continuous regression maintenance overhead'
-      ],
-      impact: 'Pioneering AI-first quality transformation; reduces manual test scripting hours by 60%+.'
-    },
-    {
-      id: 'mobikwik-mobile',
-      name: 'MobiKwik Client Automation',
-      company: 'One MobiKwik Systems',
-      category: 'mobile',
-      categoryLabel: 'Mobile Framework',
-      tagline: '95%+ Mobile Client Automation (Android & iOS)',
-      description:
-        'Designed and scaled client-side automation infrastructure for Android and iOS using Appium, Java, and TestNG. Built and maintain the complete end-to-end Jenkins CI/CD pipeline powering continuous test validation and regression gates.',
-      icon: <Smartphone className="h-6 w-6 text-cyan-400" />,
-      color: 'from-cyan-500/20 to-blue-500/20 border-cyan-500/30',
-      badgeColor: 'bg-cyan-950/70 text-cyan-300 border-cyan-700/60',
-      tech: ['Appium', 'Java', 'TestNG', 'Jenkins CI/CD', 'Maven', 'Android & iOS'],
-      highlights: [
-        '95%+ frontend client test automation coverage achieved and maintained',
-        'Parallel cross-device execution integrated into Jenkins CI/CD pipelines',
-        'End-to-end pipeline ownership from code commit to test report delivery'
-      ],
-      impact: 'Achieved 95%+ client test automation coverage with full CI/CD pipeline reliability.'
-    },
-    {
       id: 'zupee-engine',
       name: 'Zupee Self-Healing Release Engine',
       company: 'Cashgrail Pvt. Ltd. (Zupee)',
@@ -189,11 +189,11 @@ const ToolsAndFrameworks = () => {
 
   const categories = [
     { id: 'all', label: 'All Frameworks & Tools' },
+    { id: 'mobile', label: 'Mobile & CI/CD' },
     { id: 'visual-ai', label: 'Visual AI (Optics)' },
-    { id: 'operations', label: 'QA Ops & Gates (Pulse / Sentry)' },
-    { id: 'performance', label: 'Performance & UX (Apex / Prism)' },
     { id: 'ai-agentic', label: 'Agentic AI & MCP' },
-    { id: 'mobile', label: 'Mobile & CI/CD' }
+    { id: 'operations', label: 'QA Ops & Gates (Pulse / Sentry)' },
+    { id: 'performance', label: 'Performance & UX (Apex / Prism)' }
   ];
 
   const filteredTools =
@@ -216,7 +216,7 @@ const ToolsAndFrameworks = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full"></div>
           <p className="text-base sm:text-lg text-slate-300 dark:text-slate-400 max-w-2xl mx-auto">
             Proprietary solutions architected at <span className="text-white font-medium">One MobiKwik Systems</span> and{' '}
-            <span className="text-white font-medium">Zupee</span> to solve deep visual regression, production telemetry, mobile profiling, and autonomous test generation challenges.
+            <span className="text-white font-medium">Zupee</span> to solve client automation, deep visual regression, production telemetry, and autonomous test generation challenges.
           </p>
         </div>
 
@@ -237,18 +237,18 @@ const ToolsAndFrameworks = () => {
           ))}
         </div>
 
-        {/* Tools Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Tools Grid - Equal height cards */}
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {filteredTools.map((tool) => (
             <Card
               key={tool.id}
-              className={`group relative overflow-hidden bg-slate-900/90 dark:bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between`}
+              className="group relative overflow-hidden bg-slate-900/90 dark:bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col justify-between h-full"
             >
               {/* Header */}
-              <CardHeader className="space-y-3 pb-3">
-                <div className="flex items-start justify-between">
+              <CardHeader className="space-y-3 pb-3 flex-1 flex flex-col">
+                <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center space-x-3">
-                    <div className="p-3 rounded-xl bg-slate-800 border border-slate-700 group-hover:scale-105 transition-transform">
+                    <div className="p-3 rounded-xl bg-slate-800 border border-slate-700 group-hover:scale-105 transition-transform shrink-0">
                       {tool.icon}
                     </div>
                     <div>
@@ -261,7 +261,7 @@ const ToolsAndFrameworks = () => {
                     </div>
                   </div>
                   <span
-                    className={`text-xs px-2.5 py-1 rounded-full font-semibold border ${tool.badgeColor}`}
+                    className={`text-xs px-2.5 py-1 rounded-full font-semibold border shrink-0 ${tool.badgeColor}`}
                   >
                     {tool.categoryLabel}
                   </span>
@@ -271,28 +271,28 @@ const ToolsAndFrameworks = () => {
                   {tool.tagline}
                 </div>
 
-                <CardDescription className="text-slate-300 dark:text-slate-400 text-sm leading-relaxed">
+                <CardDescription className="text-slate-300 dark:text-slate-400 text-sm leading-relaxed flex-1">
                   {tool.description}
                 </CardDescription>
               </CardHeader>
 
               {/* Body */}
-              <CardContent className="space-y-4 pt-0">
+              <CardContent className="space-y-4 pt-0 mt-auto">
                 {/* Highlights */}
-                <div className="space-y-1.5 pt-2 border-t border-slate-800">
-                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                <div className="space-y-1.5 pt-3 border-t border-slate-800 min-h-[80px]">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
                     Key Architectural Capabilities:
                   </div>
                   {tool.highlights.map((item, idx) => (
                     <div key={idx} className="flex items-start text-xs text-slate-300 gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Tech Tags */}
-                <div className="pt-2">
+                <div className="pt-2 min-h-[44px] flex items-center">
                   <div className="flex flex-wrap gap-1.5">
                     {tool.tech.map((t, idx) => (
                       <span
@@ -308,7 +308,7 @@ const ToolsAndFrameworks = () => {
                 {/* Impact Highlight */}
                 <div className="pt-3 border-t border-slate-800 flex items-start gap-2 text-xs">
                   <Zap className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                  <span className="font-semibold text-emerald-400 dark:text-emerald-300">
+                  <span className="font-semibold text-emerald-400 dark:text-emerald-300 leading-snug">
                     Impact: {tool.impact}
                   </span>
                 </div>

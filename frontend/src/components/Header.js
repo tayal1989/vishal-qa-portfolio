@@ -50,23 +50,14 @@ const Header = () => {
             onClick={(e) => scrollToSection(e, '#hero')}
             className="group flex items-center space-x-3 cursor-pointer"
           >
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 p-[1.5px] shadow-md shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
-              <div className="h-full w-full bg-white dark:bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-slate-900 dark:text-white">
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-500 via-indigo-500 to-cyan-400 p-[1.5px] shadow-md shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
+              <div className="h-full w-full bg-slate-900 dark:bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-white">
                 VA
               </div>
             </div>
-            <div>
-              <div className="text-base font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
-                Vishal Agarwal
-                <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  MobiKwik
-                </span>
-              </div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono hidden sm:block">
-                Chief Agentic Quality Architect
-              </div>
-            </div>
+            <span className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+              Vishal Agarwal
+            </span>
           </a>
 
           {/* Desktop Navigation */}

@@ -93,13 +93,13 @@ const Achievements = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {honors.map((item, index) => (
             <Card
               key={index}
-              className={`p-6 bg-slate-900/90 border ${item.color} hover:border-slate-600 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between`}
+              className={`p-6 bg-slate-900/90 border ${item.color} hover:border-slate-600 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between h-full`}
             >
-              <div>
+              <div className="flex-1 flex flex-col">
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 rounded-xl bg-slate-800 border border-slate-700/80 group-hover:scale-105 transition-transform">
                     {item.icon}
@@ -117,12 +117,12 @@ const Achievements = () => {
                   {item.title}
                 </CardTitle>
 
-                <CardDescription className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                <CardDescription className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4 flex-1 min-h-[64px]">
                   {item.description}
                 </CardDescription>
               </div>
 
-              <div className="pt-3 border-t border-slate-800">
+              <div className="pt-3 border-t border-slate-800 mt-auto">
                 <span className="text-[11px] font-semibold text-amber-400/90">
                   ★ {item.badge}
                 </span>

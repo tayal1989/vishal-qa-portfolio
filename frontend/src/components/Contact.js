@@ -13,7 +13,8 @@ import {
   MapPin,
   FileDown,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  ExternalLink
 } from 'lucide-react';
 
 const Contact = () => {
@@ -25,6 +26,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sentSuccess, setSentSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -37,15 +39,64 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate sending message
-    setTimeout(() => {
-      toast({
-        title: 'Message Received!',
-        description: 'Thank you for reaching out. I will get back to you promptly.',
+    try {
+      // Submit directly to FormSubmit to deliver to tayal1989@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/tayal1989@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: `[Portfolio Contact] ${formData.subject} - from ${formData.name}`,
+          message: formData.message,
+          _captcha: 'false',
+          _template: 'table'
+        })
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      const result = await response.json();
+
+      if (response.ok || result.success === 'true' || result.success === true) {
+        toast({
+          title: 'Message Sent Successfully!',
+          description: 'Thank you! Your message has been sent directly to tayal1989@gmail.com.',
+        });
+        setSentSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      // Fallback: trigger user's default email client
+      const mailtoUrl = `mailto:tayal1989@gmail.com?subject=${encodeURIComponent(
+        `[Portfolio] ${formData.subject}`
+      )}&body=${encodeURIComponent(
+        `Hi Vishal,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+
+      window.location.href = mailtoUrl;
+
+      toast({
+        title: 'Opening Email Client...',
+        description: 'Your mail app has been opened with your message prefilled to tayal1989@gmail.com.',
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 800);
+    }
+  };
+
+  const handleDirectEmail = () => {
+    const mailtoUrl = `mailto:tayal1989@gmail.com?subject=${encodeURIComponent(
+      formData.subject || 'Portfolio Inquiry'
+    )}&body=${encodeURIComponent(
+      formData.message
+        ? `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+        : 'Hi Vishal,\n\nI came across your portfolio and would like to connect.'
+    )}`;
+    window.location.href = mailtoUrl;
   };
 
   return (
@@ -65,10 +116,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-10">
+        <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           {/* Contact Details Card */}
-          <div className="lg:col-span-5 space-y-6">
-            <Card className="bg-slate-900/90 border border-slate-800 p-6 space-y-6 shadow-xl">
+          <div className="lg:col-span-5 flex flex-col justify-between h-full">
+            <Card className="bg-slate-900/90 border border-slate-800 p-6 space-y-6 shadow-xl h-full flex flex-col justify-between">
               <div>
                 <CardTitle className="text-2xl font-bold text-white mb-2">
                   Contact Information
@@ -78,7 +129,7 @@ const Contact = () => {
                 </CardDescription>
               </div>
 
-              <div className="space-y-4 text-sm">
+              <div className="space-y-4 text-sm flex-1 pt-2">
                 <a
                   href="mailto:tayal1989@gmail.com"
                   className="flex items-center gap-3.5 p-3 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 text-slate-200 hover:text-blue-400 transition-colors"
@@ -87,7 +138,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400">Email Address</div>
+                    <div className="text-xs text-slate-400">Email Directly</div>
                     <div className="font-semibold text-white">tayal1989@gmail.com</div>
                   </div>
                 </a>
@@ -161,93 +212,122 @@ const Contact = () => {
           </div>
 
           {/* Form Card */}
-          <div className="lg:col-span-7">
-            <Card className="bg-slate-900/90 border border-slate-800 p-6 sm:p-8 shadow-xl">
-              <CardHeader className="p-0 pb-6">
-                <CardTitle className="text-2xl font-bold text-white">
-                  Send a Direct Message
-                </CardTitle>
-                <CardDescription className="text-slate-300 text-sm">
-                  Fill out this form and I will respond to your inquiry directly.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-0">
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
+          <div className="lg:col-span-7 flex flex-col justify-between h-full">
+            <Card className="bg-slate-900/90 border border-slate-800 p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
+              <div>
+                <CardHeader className="p-0 pb-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle className="text-2xl font-bold text-white">
+                        Send a Direct Message
+                      </CardTitle>
+                      <CardDescription className="text-slate-300 text-sm mt-1">
+                        Delivered straight to{' '}
+                        <strong className="text-blue-400">tayal1989@gmail.com</strong>
+                      </CardDescription>
+                    </div>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={handleDirectEmail}
+                      className="border-slate-700 text-xs text-slate-300 hover:bg-slate-800 hover:text-white hidden sm:inline-flex items-center gap-1.5"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-blue-400" />
+                      Open Mail App
+                    </Button>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="p-0">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-slate-300 text-xs font-semibold">
+                          Your Name *
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="John Doe"
+                          required
+                          className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-slate-300 text-xs font-semibold">
+                          Your Email *
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="john@example.com"
+                          required
+                          className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-slate-300 text-xs font-semibold">
-                        Your Name *
+                      <Label htmlFor="subject" className="text-slate-300 text-xs font-semibold">
+                        Subject *
                       </Label>
                       <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder="e.g. QA Leadership Opportunity / Advisory Discussion"
                         required
                         className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-slate-300 text-xs font-semibold">
-                        Your Email *
+                      <Label htmlFor="message" className="text-slate-300 text-xs font-semibold">
+                        Your Message *
                       </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder="Describe your organization, project, or what you would like to discuss..."
+                        rows={5}
                         required
-                        className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500"
+                        className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500 resize-none"
                       />
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-slate-300 text-xs font-semibold">
-                      Subject *
-                    </Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="e.g. QA Leadership Opportunity / Advisory Discussion"
-                      required
-                      className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500"
-                    />
-                  </div>
+                    <div className="space-y-3 pt-1">
+                      <Button
+                        type="submit"
+                        size="lg"
+                        disabled={isSubmitting}
+                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg shadow-blue-500/20"
+                      >
+                        {isSubmitting ? 'Sending to tayal1989@gmail.com...' : 'Send Message'}
+                        <Send className="ml-2 h-4 w-4" />
+                      </Button>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-slate-300 text-xs font-semibold">
-                      Your Message *
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Describe your organization, project, or what you would like to discuss..."
-                      rows={5}
-                      required
-                      className="bg-slate-950 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500 resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg shadow-blue-500/20"
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                    <Send className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-              </CardContent>
+                      {sentSuccess && (
+                        <div className="p-3 rounded-lg bg-emerald-950/60 border border-emerald-800/80 text-emerald-300 text-xs flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                          <span>
+                            Message successfully delivered to tayal1989@gmail.com! Vishal will get back to you shortly.
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </form>
+                </CardContent>
+              </div>
             </Card>
           </div>
         </div>

@@ -83,7 +83,7 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
               Vishal Agarwal
             </h1>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300 bg-clip-text text-transparent py-2 leading-normal tracking-tight inline-block">
               Chief Agentic Quality Architect & QA Engineering Leader
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-slate-300 dark:text-slate-300 max-w-3xl leading-relaxed">
@@ -198,11 +198,11 @@ const Hero = () => {
           </div>
 
           {/* Key Achievements Stat Banner */}
-          <div className="pt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+          <div className="pt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 items-stretch">
             {keyStats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700/80 backdrop-blur-sm transition-all duration-300 shadow-sm"
+                className="p-4 rounded-xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700/80 backdrop-blur-sm transition-all duration-300 shadow-sm flex flex-col justify-between h-full min-h-[110px]"
               >
                 <div className="flex items-center justify-between mb-1.5">
                   <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
