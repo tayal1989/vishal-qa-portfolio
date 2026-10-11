@@ -7,7 +7,8 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "node ./scripts/ci-shim.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
