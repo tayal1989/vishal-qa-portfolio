@@ -114,45 +114,43 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <Button
-              size="lg"
+          <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <button
+              type="button"
               onClick={() => scrollToSection('#tools')}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg shadow-blue-500/25 group px-6"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 group transition-all"
             >
               <Bot className="mr-2 h-5 w-5 text-cyan-300" />
               Explore Tools & Frameworks
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </button>
 
             <a
               href="/Vishal_Agarwal_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center font-semibold text-sm px-6 py-3 rounded-md bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition-colors shadow-sm"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
             >
               <FileDown className="mr-2 h-5 w-5 text-blue-400" />
               Download Resume (PDF)
             </a>
 
-            <Button
-              size="lg"
-              variant="outline"
+            <button
+              type="button"
               onClick={() => scrollToSection('#experience')}
-              className="border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
             >
               Experience History
-            </Button>
+            </button>
 
-            <Button
-              size="lg"
-              variant="ghost"
+            <button
+              type="button"
               onClick={() => scrollToSection('#contact')}
-              className="text-slate-300 hover:text-white hover:bg-slate-800/60"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
             >
-              <Mail className="mr-2 h-5 w-5" />
+              <Mail className="mr-2 h-5 w-5 text-blue-400" />
               Contact
-            </Button>
+            </button>
           </div>
 
           {/* Social Profiles */}

@@ -80,19 +80,19 @@ const Header = () => {
               href="/Vishal_Agarwal_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300/80 dark:border-slate-700 transition-all"
+              className="h-9 px-3.5 inline-flex items-center gap-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300/80 dark:border-slate-700 transition-all"
             >
               <FileDown className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               Resume PDF
             </a>
 
-            <Button
-              size="sm"
+            <button
+              type="button"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium text-xs px-4 shadow-md shadow-blue-500/20"
+              className="h-9 px-4 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium text-xs shadow-md shadow-blue-500/20 transition-all"
             >
               Get In Touch
-            </Button>
+            </button>
 
             <Button
               variant="ghost"
