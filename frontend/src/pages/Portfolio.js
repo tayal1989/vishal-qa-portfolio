@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import ToolsAndFrameworks from '../components/ToolsAndFrameworks';
+import GitHub from '../components/GitHub';
+import Experience from '../components/Experience';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Achievements from '../components/Achievements';
-import Projects from '../components/Projects';
 import Articles from '../components/Articles';
-import GitHub from '../components/GitHub';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white">
       <Header />
       <main>
         <Hero />
+        <ToolsAndFrameworks />
+        <GitHub />
+        <Experience />
         <About />
         <Skills />
         <Achievements />
-        <Projects />
         <Articles />
-        <GitHub />
         <Contact />
       </main>
       <Footer />

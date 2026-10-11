@@ -1,86 +1,132 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Award, TrendingUp, Users, Lightbulb } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import {
+  Trophy,
+  Award,
+  Globe2,
+  BookOpen,
+  Mic,
+  Star,
+  ShieldCheck,
+  TrendingUp,
+  Sparkles
+} from 'lucide-react';
 
 const Achievements = () => {
-  const achievements = [
+  const honors = [
     {
-      icon: <Award className="h-8 w-8" />,
-      title: 'Quality Engineering Leadership',
-      description: 'Led QA initiatives for large-scale mobile applications in the real money gaming industry, ensuring high reliability, performance, and security for platforms serving millions of users in high-traffic environments.',
-      metric: '14+ Years',
-      color: 'blue'
+      title: 'Zupee Value Champion — Nurturing & Growth',
+      year: '2025',
+      organization: 'Cashgrail Pvt. Ltd. (Zupee)',
+      description:
+        'Awarded the highest company-wide leadership recognition for exemplary team building, mentorship, and nurturing high-performing QA talent across the engineering department.',
+      icon: <Trophy className="h-7 w-7 text-amber-400" />,
+      badge: 'Company-Wide Leadership Award',
+      color: 'border-amber-500/30 bg-amber-950/10'
     },
     {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: 'Release Cycle Optimization',
-      description: 'Accelerated release cycles by implementing automation frameworks and CI/CD-integrated testing pipelines, significantly reducing regression testing time and enabling faster, more confident deployments.',
-      metric: 'Faster Releases',
-      color: 'green'
+      title: 'Outstanding Talent Awards (Consecutive)',
+      year: '2019 – 2024',
+      organization: 'Zupee & Snapdeal',
+      description:
+        'Recognized continuously across multiple years for outstanding individual and leadership contributions to test automation coverage, continuous release agility, and quality gates.',
+      icon: <Award className="h-7 w-7 text-blue-400" />,
+      badge: 'Multi-Year Engineering Excellence',
+      color: 'border-blue-500/30 bg-blue-950/10'
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: 'Team Development & Mentorship',
-      description: 'Mentored and guided QA leads and engineers, establishing strong testing practices, automation culture, and scalable QA processes across teams.',
-      metric: '20+ Engineers',
-      color: 'purple'
+      title: 'International Assignment — Paris, France',
+      year: 'Orange Business Services',
+      organization: 'Global Client Enterprise Systems',
+      description:
+        'Selected for on-site international assignment in Paris, France to architect, implement, and deploy enterprise automation frameworks for global telecom client networks.',
+      icon: <Globe2 className="h-7 w-7 text-cyan-400" />,
+      badge: 'Global Client Delivery',
+      color: 'border-cyan-500/30 bg-cyan-950/10'
     },
     {
-      icon: <Lightbulb className="h-8 w-8" />,
-      title: 'Testing Tools & Quality Insights',
-      description: 'Designed internal QA solutions including test impact analysis tools, automation frameworks, and testing dashboards that improved testing visibility and enabled more efficient quality decision-making.',
-      metric: 'Internal QA Innovations',
-      color: 'orange'
+      title: 'Published Author on Quality Engineering',
+      year: 'Medium & Tech Blogs',
+      organization: 'Engineering Publications',
+      description:
+        'Authored widely-read technical articles breaking down Selenium exceptions, TestNG priority internals, test-case writing interview blueprints, and high-velocity app release engines.',
+      icon: <BookOpen className="h-7 w-7 text-indigo-400" />,
+      badge: 'Thought Leadership',
+      color: 'border-indigo-500/30 bg-indigo-950/10'
+    },
+    {
+      title: 'Star Performer & Best Team Awards (2x)',
+      year: '2012 – 2014',
+      organization: 'Mahindra Comviva',
+      description:
+        'Twice awarded Best Team Award for pioneering CTAF automation framework that saved 90% manual testing effort; awarded Star Talent & Best Talent honors.',
+      icon: <Star className="h-7 w-7 text-yellow-400" />,
+      badge: 'Double Honor for 90% Automation Effort Savings',
+      color: 'border-yellow-500/30 bg-yellow-950/10'
+    },
+    {
+      title: 'Conference Speaker & Technical Trainer',
+      year: 'Industry & Internal Academies',
+      organization: 'Community Contributions',
+      description:
+        'Delivered hands-on training sessions and talks on Robot Framework, Mobile Appium strategies, and modern automated quality architectures for engineering squads.',
+      icon: <Mic className="h-7 w-7 text-emerald-400" />,
+      badge: 'Technical Trainer & Speaker',
+      color: 'border-emerald-500/30 bg-emerald-950/10'
     }
   ];
 
-  const getColorClasses = (color) => {
-    const colors = {
-      blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
-      green: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
-      purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
-      orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400'
-    };
-    return colors[color];
-  };
-
   return (
-    <section id="achievements" className="py-24 px-6 bg-white dark:bg-slate-900">
+    <section id="achievements" className="py-24 px-6 bg-slate-900/60 dark:bg-slate-950 relative">
       <div className="container mx-auto max-w-6xl">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Key Achievements
+        <div className="text-center mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-900/40 border border-amber-700/50 text-amber-300 text-xs font-semibold">
+            <Trophy className="w-3.5 h-3.5" />
+            Recognition & Accolades
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Honors & Achievements
           </h2>
-          <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
-          <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Delivering measurable impact through quality engineering leadership, automation strategy, and scalable testing practices
+          <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 mx-auto rounded-full"></div>
+          <p className="text-base sm:text-lg text-slate-300 dark:text-slate-400 max-w-2xl mx-auto">
+            Honored throughout 15+ years of engineering leadership with value champion awards, global client assignments, and technical contributions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {achievements.map((achievement, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {honors.map((item, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/50 hover:border-blue-400 dark:hover:border-blue-600"
+              className={`p-6 bg-slate-900/90 border ${item.color} hover:border-slate-600 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between`}
             >
-              <CardHeader>
+              <div>
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`p-3 rounded-xl ${getColorClasses(achievement.color)} group-hover:scale-110 transition-transform`}>
-                    {achievement.icon}
+                  <div className="p-3 rounded-xl bg-slate-800 border border-slate-700/80 group-hover:scale-105 transition-transform">
+                    {item.icon}
                   </div>
-                  <span className="text-2xl font-bold text-slate-900 dark:text-white">
-                    {achievement.metric}
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+                    {item.year}
                   </span>
                 </div>
-                <CardTitle className="text-xl text-slate-900 dark:text-white">
-                  {achievement.title}
+
+                <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">
+                  {item.organization}
+                </div>
+
+                <CardTitle className="text-lg font-bold text-white mb-2 leading-snug">
+                  {item.title}
                 </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {achievement.description}
-                </p>
-              </CardContent>
+
+                <CardDescription className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                  {item.description}
+                </CardDescription>
+              </div>
+
+              <div className="pt-3 border-t border-slate-800">
+                <span className="text-[11px] font-semibold text-amber-400/90">
+                  ★ {item.badge}
+                </span>
+              </div>
             </Card>
           ))}
         </div>
