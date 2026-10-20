@@ -58,57 +58,57 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-16 bg-gradient-to-b from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 overflow-hidden"
     >
       {/* Background radial gradient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 dark:bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 animate-fadeIn">
           {/* Top Pill / Status Tag */}
-          <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700/80 shadow-inner">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="text-xs font-semibold text-slate-200">
+          <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-ping"></span>
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
               Engineering Manager @ One MobiKwik Systems
             </span>
-            <span className="text-slate-500 text-xs hidden sm:inline">•</span>
-            <span className="text-xs text-blue-400 font-medium hidden sm:inline-flex items-center gap-1">
+            <span className="text-slate-300 dark:text-slate-600 text-xs hidden sm:inline">•</span>
+            <span className="text-xs text-blue-600 dark:text-blue-400 font-medium hidden sm:inline-flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5" /> Architecting AI-First & Agentic Quality
             </span>
           </div>
 
           {/* Name & Titles */}
           <div className="space-y-4">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
               Vishal Agarwal
             </h1>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300 bg-clip-text text-transparent py-2 leading-normal tracking-tight inline-block">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 dark:from-blue-400 dark:via-indigo-300 dark:to-cyan-300 bg-clip-text text-transparent py-2 leading-normal tracking-tight inline-block">
               Chief Agentic Quality Architect & QA Engineering Leader
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 dark:text-slate-300 max-w-3xl leading-relaxed">
-              15+ years architecting scalable quality systems across <span className="text-white font-medium">FinTech</span>,{' '}
-              <span className="text-white font-medium">Gaming</span>, and <span className="text-white font-medium">Telecom</span>.
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+              15+ years architecting scalable quality systems across <span className="text-slate-900 dark:text-white font-medium">FinTech</span>,{' '}
+              <span className="text-slate-900 dark:text-white font-medium">Gaming</span>, and <span className="text-slate-900 dark:text-white font-medium">Telecom</span>.
               Pioneering the shift to AI-augmented, agent-driven QA ecosystems using{' '}
-              <span className="text-cyan-400 font-mono text-sm bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/60">Cursor IDE</span>,{' '}
-              <span className="text-cyan-400 font-mono text-sm bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/60">Claude AI Agents</span>, and{' '}
-              <span className="text-cyan-400 font-mono text-sm bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/60">MCP (Model Context Protocol)</span>{' '}
+              <span className="text-cyan-800 dark:text-cyan-300 font-mono text-sm bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-200 dark:border-cyan-800/60">Cursor IDE</span>,{' '}
+              <span className="text-cyan-800 dark:text-cyan-300 font-mono text-sm bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-200 dark:border-cyan-800/60">Claude AI Agents</span>, and{' '}
+              <span className="text-cyan-800 dark:text-cyan-300 font-mono text-sm bg-cyan-50 dark:bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-200 dark:border-cyan-800/60">MCP (Model Context Protocol)</span>{' '}
               to autonomously generate, maintain, and heal test pipelines at scale.
             </p>
           </div>
 
           {/* Quick Contact & Location Badges */}
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400">
+          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
             <div className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-blue-400" />
+              <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Gurgaon, India</span>
             </div>
-            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">•</span>
             <a
               href="mailto:tayal1989@gmail.com"
-              className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+              className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
-              <Mail className="w-4 h-4 text-blue-400" />
+              <Mail className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>tayal1989@gmail.com</span>
             </a>
           </div>
@@ -120,7 +120,7 @@ const Hero = () => {
               onClick={() => scrollToSection('#tools')}
               className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 group transition-all"
             >
-              <Bot className="mr-2 h-5 w-5 text-cyan-300" />
+              <Bot className="mr-2 h-5 w-5 text-cyan-200" />
               Explore Tools & Frameworks
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -129,16 +129,16 @@ const Hero = () => {
               href="/Vishal_Agarwal_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 transition-all shadow-sm"
             >
-              <FileDown className="mr-2 h-5 w-5 text-blue-400" />
+              <FileDown className="mr-2 h-5 w-5 text-blue-600 dark:text-blue-400" />
               Download Resume (PDF)
             </a>
 
             <button
               type="button"
               onClick={() => scrollToSection('#experience')}
-              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 transition-all shadow-sm"
             >
               Experience History
             </button>
@@ -146,23 +146,23 @@ const Hero = () => {
             <button
               type="button"
               onClick={() => scrollToSection('#contact')}
-              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 transition-all shadow-sm"
+              className="h-12 px-6 rounded-lg font-semibold text-sm inline-flex items-center justify-center bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 transition-all shadow-sm"
             >
-              <Mail className="mr-2 h-5 w-5 text-blue-400" />
+              <Mail className="mr-2 h-5 w-5 text-blue-600 dark:text-blue-400" />
               Contact
             </button>
           </div>
 
           {/* Social Profiles */}
           <div className="flex items-center space-x-5 pt-2">
-            <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">
+            <span className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
               Profiles:
             </span>
             <a
               href="https://linkedin.com/in/vishal-agarwal-8b3363a9"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-800/80 hover:bg-blue-600/20 text-slate-300 hover:text-blue-400 border border-slate-700/60 transition-all"
+              className="p-2.5 rounded-lg bg-white hover:bg-blue-50 dark:bg-slate-800/80 dark:hover:bg-blue-600/20 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700/60 shadow-sm transition-all"
               aria-label="LinkedIn Profile"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -174,7 +174,7 @@ const Hero = () => {
               href="https://github.com/tayal1989"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-800/80 hover:bg-blue-600/20 text-slate-300 hover:text-blue-400 border border-slate-700/60 transition-all"
+              className="p-2.5 rounded-lg bg-white hover:bg-blue-50 dark:bg-slate-800/80 dark:hover:bg-blue-600/20 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700/60 shadow-sm transition-all"
               aria-label="GitHub Profile"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@ const Hero = () => {
               href="https://medium.com/@tayal1989"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-800/80 hover:bg-blue-600/20 text-slate-300 hover:text-blue-400 border border-slate-700/60 transition-all"
+              className="p-2.5 rounded-lg bg-white hover:bg-blue-50 dark:bg-slate-800/80 dark:hover:bg-blue-600/20 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700/60 shadow-sm transition-all"
               aria-label="Medium Profile"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -200,18 +200,18 @@ const Hero = () => {
             {keyStats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700/80 backdrop-blur-sm transition-all duration-300 shadow-sm flex flex-col justify-between h-full min-h-[110px]"
+                className="p-4 rounded-xl bg-white hover:bg-slate-50 dark:bg-slate-900/80 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700/80 backdrop-blur-sm transition-all duration-300 shadow-sm flex flex-col justify-between h-full min-h-[110px]"
               >
                 <div className="flex items-center justify-between mb-1.5">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                     {stat.value}
                   </div>
                   {stat.icon}
                 </div>
-                <div className="text-xs font-semibold text-slate-200">
+                <div className="text-xs font-semibold text-slate-700 dark:text-slate-200">
                   {stat.label}
                 </div>
-                <div className="text-[11px] text-slate-400 mt-0.5 leading-tight">
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 leading-tight">
                   {stat.subtext}
                 </div>
               </div>

@@ -157,24 +157,24 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-6 bg-slate-950 relative">
+    <section id="experience" className="py-24 px-6 bg-slate-50/70 dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800/60 relative">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-900/40 border border-indigo-700/50 text-indigo-300 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-900/40 border border-indigo-200 dark:border-indigo-700/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold">
             <Briefcase className="w-3.5 h-3.5" />
             15+ Years Track Record
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Professional Experience
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
-          <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             From hands-on automation framework engineering to executive QA leadership across FinTech, Gaming, and Global Telecom enterprises.
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-32 space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-6 sm:pl-10">
               {/* Timeline marker icon */}
@@ -182,13 +182,13 @@ const Experience = () => {
                 className={`absolute -left-[17px] top-1.5 w-8 h-8 rounded-full flex items-center justify-center border-2 ${
                   exp.current
                     ? 'bg-blue-600 border-cyan-400 shadow-lg shadow-blue-500/40'
-                    : 'bg-slate-900 border-slate-700'
+                    : 'bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700 shadow-sm'
                 }`}
               >
                 {exp.current ? (
                   <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
                 ) : (
-                  <Building className="w-3.5 h-3.5 text-slate-400" />
+                  <Building className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
                 )}
               </div>
 
@@ -196,57 +196,57 @@ const Experience = () => {
               <Card
                 className={`border transition-all duration-300 ${
                   exp.current
-                    ? 'bg-slate-900/90 border-blue-500/40 shadow-xl shadow-blue-500/5'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'bg-white dark:bg-slate-900/90 border-blue-500/40 shadow-xl shadow-blue-500/5'
+                    : 'bg-white/90 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm'
                 }`}
               >
                 <CardHeader className="space-y-3 pb-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <CardTitle className="text-xl sm:text-2xl font-bold text-white">
+                        <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                           {exp.role}
                         </CardTitle>
                         {exp.current && (
-                          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/40">
                             Current Role
                           </span>
                         )}
                       </div>
-                      <div className="text-base font-semibold text-blue-400 dark:text-blue-300 mt-1">
+                      <div className="text-base font-semibold text-blue-600 dark:text-blue-300 mt-1">
                         {exp.company}
                       </div>
                     </div>
 
-                    <div className="text-right text-xs sm:text-sm text-slate-400 space-y-1">
-                      <div className="flex items-center gap-1.5 font-medium sm:justify-end text-slate-300">
-                        <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                    <div className="text-right text-xs sm:text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                      <div className="flex items-center gap-1.5 font-medium sm:justify-end text-slate-700 dark:text-slate-300">
+                        <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                         {exp.period}
                       </div>
                       <div className="flex items-center gap-1.5 sm:justify-end">
-                        <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                         {exp.location}
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-xs font-mono text-slate-400">
+                  <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
                     {exp.domain}
                   </div>
-                  <CardDescription className="text-slate-300 text-sm leading-relaxed">
+                  <CardDescription className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                     {exp.summary}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="space-y-4 pt-1">
-                  <div className="space-y-2 border-t border-slate-800/80 pt-3">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <div className="space-y-2 border-t border-slate-200 dark:border-slate-800/80 pt-3">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       Key Contributions & Impact:
                     </div>
                     <ul className="space-y-2">
                       {exp.achievements.map((ach, aIdx) => (
-                        <li key={aIdx} className="flex items-start text-xs sm:text-sm text-slate-300 gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                        <li key={aIdx} className="flex items-start text-xs sm:text-sm text-slate-700 dark:text-slate-300 gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                           <span className="leading-relaxed">{ach}</span>
                         </li>
                       ))}
@@ -257,7 +257,7 @@ const Experience = () => {
                     {exp.skills.map((skill, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60"
+                        className="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60"
                       >
                         {skill}
                       </span>

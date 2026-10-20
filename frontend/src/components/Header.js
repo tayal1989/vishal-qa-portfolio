@@ -55,7 +55,7 @@ const Header = () => {
                 VA
               </div>
             </div>
-            <span className="text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+            <span className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               Vishal Agarwal
             </span>
           </a>
@@ -115,7 +115,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-xl"
+              className="rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -128,7 +128,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-xl"
+              className="rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
               aria-label="Toggle navigation menu"
             >
               {isMobileMenuOpen ? (
